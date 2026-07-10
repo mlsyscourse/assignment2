@@ -1,25 +1,25 @@
 import tempfile
 
 import tvm
-from tvm import meta_schedule as ms
-from tvm import tir
-from tvm.meta_schedule.space_generator import ScheduleFn
+from tvm import s_tir
+from tvm.s_tir import meta_schedule as ms
+from tvm.s_tir.meta_schedule.space_generator import ScheduleFn
 
 from evaluate import test_numerical_correctness
 from gemm_relu_add import gemm_relu_add
 
 
-def auto_tuning_schedule(sch: tir.Schedule) -> tir.Schedule:
+def auto_tuning_schedule(sch: s_tir.Schedule) -> s_tir.Schedule:
     """The function that defines the schedule space for automatic tuning.
 
     Parameters
     ----------
-    sch : tir.Schedule
+    sch : s_tir.Schedule
         An empty schedule of the GeMM + ReLU + add workload.
 
     Returns
     -------
-    sch : tir.Schedule
+    sch : s_tir.Schedule
         The updated schedule of the GeMM + ReLU + add workload.
     """
 

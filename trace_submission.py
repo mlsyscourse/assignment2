@@ -1,5 +1,5 @@
-from tvm import tir
+from tvm import s_tir
 
-def apply_trace(sch: tir.Schedule) -> None:
+def apply_trace(sch: s_tir.Schedule) -> None:
   # Paste your `apply_trace` function here...
   ...
